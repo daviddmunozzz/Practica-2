@@ -1,5 +1,5 @@
 # Practica-2
 Buscador SSOOIIGLE
 
-David Muñoz Escribano
+David Muñoz Escribano  
 Daniel Aguado Márquez
