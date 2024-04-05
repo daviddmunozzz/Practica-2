@@ -6,11 +6,14 @@
 class Busqueda
 {
     public:
-        Busqueda(int id, int ini, int fin, std::string libro);
-        void operator()() const;
-        void toString();
+        Busqueda(int id, int ini, int fin, std::string libro, std::string palabra);
+        void operator()() const;    
+        void toString() const;
     private:
         void hacerBusqueda(std::vector<std::string> texto) const;
+        void setAnterior_Posterior(std::vector<std::string> lineaSeparada);
+        void setAnterior(std::string anterior);
+        void setPosterior(std::string posterior);
         int idHilo;
         int inicio;
         int final;

@@ -4,7 +4,7 @@ CD := mkdir -p
 CC := g++
 CCOMPILE := -o
 THREAD := -pthread
-STDIO := -std=c++11
+STDIO := -std=c++17
 FILE := SSOOIIGLE
 EXTENSION := .cpp
 LK := ln

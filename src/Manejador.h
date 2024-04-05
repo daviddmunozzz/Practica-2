@@ -10,6 +10,7 @@
 
 int ContarLineas(std::string nombreFichero);
 std::vector<std::string> LeerFichero(std::string libro);
+std::vector<std::string> split(std::string str, std::string patron);
 std::string toLower(std::string str);
 
 #endif
