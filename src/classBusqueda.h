@@ -1,12 +1,12 @@
 #include <string>
 #include <vector>
 
-#ifndef BUSQUEDA
-#define BUSQUEDA
+#ifndef BUSQUEDA_H
+#define BUSQUEDA_H
 class Busqueda
 {
     public:
-        Busqueda(int id, int ini, int fin, std::string libro, std::string palabra);
+        Busqueda(int id, int ini, int fin, int line, std::string palabra, std::string p_a, std::string p_p);
         void operator()() const;    
         void toString() const;
     private:
