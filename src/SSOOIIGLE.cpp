@@ -84,7 +84,7 @@ void crearHilos (int numHilos, std::string libro, std::string palabra)
     
     int inicio = 0;                                     //Posicion de inicio desde la cual el hilo comenzará.
     int fin = 0;                                        //Posicion final de lectura del hilo
-    int numLineas = ContarLineas(libro);                //Calculo del fragmento para cada hilo
+    int numLineas = contarLineas(libro);                //Calculo del fragmento para cada hilo
     int fragmento = numLineas / numHilos;
 
     for(int idHilo = 0; idHilo < numHilos; idHilo++)    //Mientras haya hilos por crear
@@ -120,7 +120,7 @@ void crearHilos (int numHilos, std::string libro, std::string palabra)
 *********************************************************************/
 void buscar (int idHilo, int inicio, int fin, std::string libro, std::string palabra)
 {
-    std::vector<std::string> fragmento = LeerFichero(libro);
+    std::vector<std::string> fragmento = leerFichero(libro);
     std::queue<Busqueda> colaEncontrados;
     std::string palabra_ant, palabra_post;
 
