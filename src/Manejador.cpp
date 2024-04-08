@@ -93,8 +93,8 @@ std::string toLower(std::string str)
 *
 * Method name: split
 *
-* Description of the Method: Divide la cola de lineas de fichero para que
-*                            los hilos puedan trabajar en su parte
+* Description of the Method: Divide la cola de lineas de fichero en una
+*                            cola de palabras para ser analizadas por el hilo
 *
 * Calling arguments: string str --> Linea
 *
@@ -103,18 +103,18 @@ std::string toLower(std::string str)
 *********************************************************************/
 std::vector<std::string> split(std::string str, std::string patron)
 {
-    int posInicio = 0;                  
-    int posEncontrada = 0;
-    std::string splitted;
-    std::vector<std::string> resultados;
+    int posInicio = 0;                   //Posicion desde donde buscamos el siguiente patron.
+    int posEncontrada = 0;               //Posicion actual del patron.
+    std::string splitted;                //Palabra de la linea que guardaremos en el vector resultados.
+    std::vector<std::string> resultados; //Vector de palabras.
 
-    while (posEncontrada >= 0)
+    while (posEncontrada >= 0)                                          //Repetimos mientras encontremos el patron. Si no hay mas patrones, devuelve -1.
     {
-        posEncontrada = str.find(patron, posInicio);
-        splitted = str.substr(posInicio, posEncontrada - posInicio);
-        posInicio = posEncontrada + 1;
-        resultados.push_back(splitted);
+        posEncontrada = str.find(patron, posInicio);                    //Almacenamos la posicion de la siguiente ocurrencia del patron.
+        splitted = str.substr(posInicio, posEncontrada - posInicio);    //Extraemos la palabra.
+        posInicio = posEncontrada + 1;                                  //La nueva posicion incial es la siguiente a donde hemos encontrado el patron.
+        resultados.push_back(splitted);                                 //Encolamos la palabra.
     }
 
-    return resultados;
+    return resultados;                                                  //Devolvemos el resultado.
 }
